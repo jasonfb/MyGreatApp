@@ -1,0 +1,20 @@
+
+= link_to "New event", new_dashboard_event_path(), disable_with: "Loading...", remote: true, class: "new-event-button btn btn-primary pull-right"
+
+.clearfix
+.new-event-form{style: "display: none; position: relative;"}
+
+
+
+%table.table.table-striped.event-table
+  %thead
+    %tr
+      %th{:scope => "col"} User      %th{:scope => "col"} Name      %th{:scope => "col"} Start at      %th{:scope => "col"} End at      %th{:scope => "col"} Promote on      %th{:scope => "col"} Description
+
+
+
+  %tbody
+    - if events.empty?
+      None
+    - events.each do |event|
+      = render partial: 'dashboard/events/line', locals: {event: event,  }

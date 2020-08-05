@@ -1,0 +1,14 @@
+%tr{'data-id': event.id, 'data-edit': 'false'}
+  %td
+    = event.user.to_label
+  %td
+    = event.name
+  %td
+    = event.start_at
+  %td
+    = event.end_at
+
+  %td
+    = event.description
+  %td
+    = link_to "Edit <i class='fa fa-1x fa-list-alt'></i>".html_safe, edit_dashboard_event_path(event), remote: true , disable_with: "Loading...", class: "edit-event-button btn btn-primary pull-right "

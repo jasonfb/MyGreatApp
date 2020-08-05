@@ -1,0 +1,4 @@
+.container-fluid
+  .row
+    .col-md-12
+      = render partial: "dashboard/events/list", locals: {events: current_user.events.order("created_at DESC").page(1)}
